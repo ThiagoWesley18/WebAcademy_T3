@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta  charset="UTF-8">
+        <title>Formulário</title>
+        <meta name="author" content="Thiago Wesley">
+    </head>
+    <body>
+        <h1><Strong>Formulário de Contato</Strong></h1>
+
+        <p>Preencha o formulário abaixo e clique no botão enviar.</p>
+
+        <form action="" method="post">
+            <fieldset>
+                <legend><strong>Dados Básicos</strong></legend>
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" value="" id="nome"><br>
+                <label for="email">E-mail:</label>
+                <input type="email" nome="email" value="" id="email" placeholder="nome@dominio.com"><br>
+                <label for="website">Website:</label>
+                <input type="url" nome="website" value="" id="website" ><br>
+            </fieldset>
+            <fieldset>
+                <legend><strong>Seu Curso no Icomp</strong></legend>
+                <label for="CC">Ciência da Computação</label>
+                <input type="radio" name="curso" value="CC" id="CC"><br>
+                <label for="SI">Sistema da Informação</label>
+                <input type="radio" name="curso" value="SI" id="SI"><br>
+                <label for="EC">Engenharia da Computação</label>
+                <input type="radio" name="curso" value="EC" id="EC"><br>
+            </fieldset>
+            <fieldset>
+                <legend><strong>Assinale as linguagens ja usadas por você</strong></legend>
+                <label for="java">Java</label>
+                <input type="checkbox" name="linguagem" value="java" id="java"><br>
+                <label for="C">C</label>
+                <input type="checkbox" name="linguagem" value="C" id="C"><br>
+                <label for="c++">C++</label>
+                <input type="checkbox" name="linguagem" value="c++" id="c++"><br>
+                <label for="perl">Perl</label>
+                <input type="checkbox" name="linguagem" value="perl" id="perl"><br>
+                <label for="python">Python</label>
+                <input type="checkbox" name="linguagem" value="python" id="python"><br>
+                <label for="javascript">javascript</label>
+                <input type="checkbox" name="linguagem" value="javascript" id="javascript"><br>
+            </fieldset>
+            <FIeldset>
+                <legend><strong>Dados Complementares</strong></legend>
+                <label for="cor">Cor Favorita:</label>
+                <input type="color" name="cor" id="cor"><br>
+                <label for="nascimento">Data de nascimento:</label>
+                <input type="date" name="nascimento" id="nascimento"><br>
+                <label for="entrada">Data de entrada no curso:</label>
+                <input type="number" name="entrada" min="1980" max="2024" step="1" value="" id="entrada"><br>
+                <label for="notaSite">Nota para este Site</label>
+                <input type="range" name="notaSite" id="notaSite">
+            </FIeldset>
+            <fieldset>
+                <legend><strong>Área de Atuação</strong></legend>
+                <select name="area" id="area">
+                    <option value="" selected>...</option>
+                    <option value="1">Banco de Dados</option>
+                    <option value="2">Eduacação a Distância</option>
+                    <option value="3">Engenharia de Software</option>
+                    <option value="4">Otimização</option>
+                    <option value="5">Programação para Web</option>
+                    <option value="6">Recuperação de informação</option>
+                    <option value="7">Redes de Computadores</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend><strong>Submeta seu currículo vitae</strong></legend>
+                <input type="file" name="curriculo">
+            </fieldset>
+            <fieldset>
+                <legend><strong>Digite sua Mensagem</strong></legend>
+                <textarea name="mensagem" id="mensagem" cols="30" rows="10">
+                </textarea>
+            </fieldset>
+            <input type="submit" name="submit" value="Enviar" />
+        </form>
+    </body>
+
+
+</html>
