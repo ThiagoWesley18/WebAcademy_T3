@@ -28,6 +28,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    height: 90vh;
     gap: 20px;
     grid-template-areas: 
       "inicio inicio inicio aside" 
@@ -42,7 +43,7 @@
   .cards{
     display: grid;
     grid-area: card;
-    height: 60vh;
+    
     gap: 20px;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(3, auto);
