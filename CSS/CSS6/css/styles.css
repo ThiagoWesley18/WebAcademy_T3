@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 1024px) and (orientation: landscape) {
+  .container1{ 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    align-items: center;
+    grid-template-areas: 
+      "header header header nav";
+  }
+
+  .container1 .title{
+    grid-area: header;
+  }
+
+  nav{
+    display: flex;
+    grid-area: nav;
+    justify-content: flex-end;
+  }
+
+  .container2{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: 90vh;
+    gap: 20px;
+    grid-template-areas: 
+      "inicio inicio inicio aside" 
+      "card card card aside"
+      "card card card aside";
+  }
+
+  .inicio{
+    grid-area: inicio;
+  }
+  
+  .cards{
+    display: grid;
+    grid-area: card;
+    
+    gap: 20px;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+  }
+  aside{
+    grid-area: aside;
+    width: 20rem;
+  }
+}
+
+body {
+  padding: 0 0 1em;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  border: 5px solid #000;
+}
+
+header ul li{
+  list-style: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 0.5em 1em;
+}
+
+header .title {
+  font-size: 150%;
+  font-style: italic;
+  font-weight: bold;
+  padding: 1em;
+}
+
+main {
+  padding: 0 1em;
+}
+
+.cards {
+  grid-area: card;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards li {
+  border: 5px solid #000;
+  margin-bottom: 1em;
+}
+
+.cards h2 {
+  background-color: #333;
+  color: #fff;
+  margin: 0;
+  padding: 0.5em 1em;
+}
+
+.cards .inner {
+  padding: 0.5em 1em;
+}
+
+.sidebar {
+  background-color: #333;
+  border: 5px solid #000;
+  padding: 1em 1em;
+  color: #fff;
+}
+
+.inicio h1{
+  margin: 30px;
+}
+
+.inicio p{
+  margin: 30px;
+  text-align: justify;
+}
+
