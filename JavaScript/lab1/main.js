@@ -11,10 +11,11 @@ function randomValueFromArray(array){
 //const insertX = ["Willy the Goblin", "Big Daddy", "Father Christmas"];
 //const insertY = ["the soup kitchen", "Disneyland", "the White House"];
 //const insertZ = ["spontaneously combusted", "melted into a puddle on the sidewalk", "turned into a slug and crawled away"];
-const storyText = "Estavam 94 Fahrenheit lá fora, então :insertx: foi dar uma caminhada. Quando chegaram a :inserty:, ficaram olhando horrorizados por alguns momentos, depois :insertz:. Bob viu tudo, mas não ficou surpreso - :insertx: pesa 300 libras e era um dia quente.";
-const insertX = ["Willy doende", "Paizão", "Papai Noel"];
-const insertY = ["cozinha da sopa", "Disneyland", "a Casa Branca"];
-const insertZ = ["espontaneamente explodiu", "derreteu em uma poça na calçada", "virou uma lesma e rastejou para longe"];
+const storyText = "A Enterprise encontra uma névoa musical que :insertx: . Data tenta decifrar a linguagem musical, enquanto Spock sente uma :inserty: com a melodia. A Dra. Crusher observa diferentes reações entre os membros da tripulação. A melodia é revelada como uma mensagem de :inserty: de uma civilização alienígena. A Enterprise estabelece contato :insertz:";
+const insertX = ["emana uma melodia misteriosa", "encanta a tripulação com sua beleza", "se revela como uma arma alienígena"];
+const insertY = ["paz", "raiva", "tristeza"];
+const insertZ = ["com os alienígenas.", "com a frota.", "com as naves."];
+
 
 randomize.addEventListener('click', result);
 
@@ -30,14 +31,16 @@ function result() {
 
     if(customName.value !== '') {
         const name = customName.value;
-        newStory = newStory.replace('Bob', name);
+        newStory = newStory.replace("Data", name);
+        newStory = newStory.replace("Martok", name);
     }
 
-    if(document.getElementById("uk").checked) {
-        const weight = Math.round(300 * 0.071429) + " stone";
-        const temperature =  Math.round((94-32) * 5/9) + " centigrade";
-        newStory = newStory.replace('94 Fahrenheit', temperature);
-        newStory = newStory.replace('300 libras', weight);
+    if(document.getElementById("k").checked) {
+        newStory = newStory.replace(/A Enterprise/g, "O cruzador de batalha Dahar Master");
+        newStory = newStory.replace("Spock", "Gowron");
+        newStory = newStory.replace("A Dra. Crusher", "Worf");
+        newStory = newStory.replace("Data", "Martok");
+        
 
     }
 
