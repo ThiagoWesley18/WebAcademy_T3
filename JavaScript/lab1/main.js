@@ -11,7 +11,7 @@ function randomValueFromArray(array){
 //const insertX = ["Willy the Goblin", "Big Daddy", "Father Christmas"];
 //const insertY = ["the soup kitchen", "Disneyland", "the White House"];
 //const insertZ = ["spontaneously combusted", "melted into a puddle on the sidewalk", "turned into a slug and crawled away"];
-const storyText = "A Enterprise encontra uma névoa musical que :insertx: . Data tenta decifrar a linguagem musical, enquanto Spock sente uma :inserty: com a melodia. A Dra. Crusher observa diferentes reações entre os membros da tripulação. A melodia é revelada como uma mensagem de :inserty: de uma civilização alienígena. A Enterprise estabelece contato :insertz:";
+const storyText = "A Enterprise encontra uma névoa musical que :insertx:. Data tenta decifrar a linguagem musical, enquanto Spock sente uma :inserty: com a melodia. A Dra. Crusher observa diferentes reações entre os membros da tripulação. A melodia é revelada como uma mensagem de :inserty: de uma civilização alienígena. A Enterprise estabelece contato :insertz:";
 const insertX = ["emana uma melodia misteriosa", "encanta a tripulação com sua beleza", "se revela como uma arma alienígena"];
 const insertY = ["paz", "raiva", "tristeza"];
 const insertZ = ["com os alienígenas.", "com a frota.", "com as naves."];
@@ -31,15 +31,15 @@ function result() {
 
     if(customName.value !== '') {
         const name = customName.value;
-        newStory = newStory.replace("Data", name);
-        newStory = newStory.replace("Martok", name);
+        newStory = newStory.replace(/Data/g, name);
+        newStory = newStory.replace(/Martok/g, name);
     }
 
     if(document.getElementById("k").checked) {
         newStory = newStory.replace(/A Enterprise/g, "O cruzador de batalha Dahar Master");
-        newStory = newStory.replace("Spock", "Gowron");
-        newStory = newStory.replace("A Dra. Crusher", "Worf");
-        newStory = newStory.replace("Data", "Martok");
+        newStory = newStory.replace(/Spock/g, "Gowron");
+        newStory = newStory.replace(/A Dra. Crusher/g, "Worf");
+        newStory = newStory.replace(/Data/g, "Martok");
         
 
     }
