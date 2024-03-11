@@ -1,0 +1,33 @@
+<body>
+  <h1>Várias listas</h1>
+
+  <div>
+    <p id="lista-titulo" name="lista">Lista de itens:</p>
+  </div>
+
+  <ul id="lista-itens-1">
+    <li id="one" class="hot">item a</li>
+    <li id="two" class="hot">item b</li>
+    <li id="three" class="hot">item c</li>
+    <li id="four">item d</li>
+  </ul>
+
+  <script>
+    const lista = document.querySelector("#lista-itens-1");
+     
+    // I
+    console.log("primeiro item da lista: \n", lista.firstElementChild);
+    console.log("último item da lista: \n", lista.lastElementChild);
+
+    // II
+    console.log("Elemnto pai: \n", lista.parentElement);
+
+    // III
+    console.log("Todos os filhos: \n", lista.children);
+
+    // IV
+    const item = document.querySelector("#two");
+    console.log("Próximo irmão de #two: \n", item.nextElementSibling);
+    console.log("Irmão anterior de #two: \n", item.previousElementSibling);
+  </script>
+</body>

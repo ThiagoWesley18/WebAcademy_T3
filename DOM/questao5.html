@@ -1,0 +1,40 @@
+<body>
+  <h1>To-do</h1>
+
+  <div>
+    <p id="lista-titulo" name="lista">Lista de atividades:</p>
+  </div>
+
+  <div>
+    <input placeholder="Digite aqui o item" />
+    <button id="add">Adicionar</button>
+  </div>
+
+  <ul id="lista-itens">
+    <li>item a</li>
+  </ul>
+
+  <div>
+    <button id="remove">Remover último item</button>
+  </div>
+
+  <script>
+    let lista = document.querySelector('#lista-itens');
+
+    // letra a
+    const btnAdd = document.querySelector('#add');
+    btnAdd.addEventListener("click", () => {
+      let valorDoCampo = document.querySelector('input').value;
+      const ele = document.createElement('li');
+      let text = document.createTextNode(valorDoCampo);
+      ele.appendChild(text);
+      lista.appendChild(ele);
+    });
+
+     // letra b
+     const btnRemove = document.querySelector('#remove');
+      btnRemove.addEventListener("click", () => {
+        lista.removeChild(lista.lastElementChild);
+      });
+  </script>
+</body>
