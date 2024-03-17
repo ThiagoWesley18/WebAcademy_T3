@@ -1,3 +1,5 @@
-
-
-node
+<pre style="font-size:17px; border: 3px solid; display: inline-block">
+O Node.js é um ambiente de execução JavaScript de código aberto
+e multiplataforma que permite executar código JavaScript fora de
+um navegador web. Em termos mais simples, ele permite que você use
+JavaScript para construir aplicativos e ferramentas do lado do servidor. </pre>
