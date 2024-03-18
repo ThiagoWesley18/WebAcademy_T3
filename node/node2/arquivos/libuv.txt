@@ -1,0 +1,6 @@
+<pre style="font-size:17px; border: 3px solid; display: inline-block">
+libuv é uma biblioteca C multiplataforma que fornece suporte para 
+entrada/saída (I/O) assíncrona.  Isso significa que ela permite que 
+programas lidem com operações que levam tempo para serem concluídas 
+(como ler de um arquivo ou enviar dados pela rede) sem bloquear a 
+execução do programa principal.</pre>

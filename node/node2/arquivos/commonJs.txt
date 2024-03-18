@@ -1,0 +1,5 @@
+<pre style="font-size:17px; border: 3px solid; display: inline-block">
+CommonJS é um conjunto de especificações que define como o código JavaScript deve 
+ser organizado em módulos para ambientes fora dos navegadores web, normalmente em 
+servidores ou aplicativos de desktop. Essencialmente, ele criou uma maneira de 
+dividir aplicativos maiores em partes menores e reutilizáveis.</pre>

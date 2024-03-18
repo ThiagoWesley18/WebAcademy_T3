@@ -1,0 +1,16 @@
+<pre style="font-size:17px; border: 3px solid; display: inline-block">
+ESM, ou Módulos ECMAScript, é um padrão mais recente para estruturar código 
+JavaScript em módulos. Comparado ao CommonJS, ele oferece várias vantagens:
+
+    1 - Suporte nativo a navegadores: O ESM é integrado aos navegadores modernos, 
+        eliminando a necessidade de ferramentas ou bibliotecas adicionais.
+        
+    2 - Importações estáticas: As importações são declaradas diretamente no
+         código, tornando a análise e o gerenciamento de dependências pelo navegador mais fáceis.
+
+    3 - Escopo mais restrito: O ESM promove um escopo de variável mais restrito,
+         reduzindo o risco de conflitos de nomes e efeitos colaterais indesejados.
+
+    4 - Tree Shaking: Os empacotadores modernos podem aproveitar as importações 
+        estáticas do ESM para realizar o "tree shaking", removendo código não 
+        utilizado do pacote final, resultando em arquivos menores.</pre>

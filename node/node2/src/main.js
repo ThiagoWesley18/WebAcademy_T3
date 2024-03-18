@@ -1,8 +1,8 @@
 
-const fs = require('fs');
-const http = require('http');
-const { createLink, voltar } = require('./utils.js');
-const dotenv = require('dotenv');
+import fs from 'fs';
+import http from "http";
+import {createLink , voltar} from './utils.js';
+import dotenv from "dotenv";
 
 /* configura process.env para receber os valores de configurações do arquivo que é apontado pela variavel 
 ambiente NODE_ENV*/
