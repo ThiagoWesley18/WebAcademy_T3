@@ -1,0 +1,47 @@
+</form>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                background-color: #f2f2f2;
+                box-sizing: border-box;
+            }
+            .container{
+                display: grid; 
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(3, 1fr);
+                align-items: center;
+                grid-template-areas: 
+                "header"
+                "param"
+                "paragrafo";
+            }
+
+            .titulo{
+                grid-area: header;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 40px;
+                padding: 1em;
+            }
+
+            .parametros{
+                grid-area: param;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 25px;
+                gap: 10px;
+            }
+            button{
+                font-size: 15px;
+                padding: 2px;
+                border-radius: 5px;
+            }
+            input {
+                font-size: 15px;
+            }
+        </style>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "node3",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "start": "NODE_ENV=development npx nodemon src/main.js",
+    "start:prod": "NODE_ENV=production node src/main.js"
+  },
+  "author": "Thiago Wesley",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "lorem-ipsum": "^2.0.8",
+    "nodemon": "^3.1.0"
+  }
+}
