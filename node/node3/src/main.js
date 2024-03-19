@@ -19,7 +19,7 @@ http.createServer((req, res) => {
         if( req.url != "/favicon.ico"){
             numParagrafo = req.url.split("=")[1];
             Promise.all([gerarHTMLAnterior(), gerarHTMLPosterior()]).then((values) => {
-                res.write(values[0] + gerarTextoLoremIpisum(numParagrafo) +values[1]);
+                res.write(values[0] + gerarTextoLoremIpisum(numParagrafo) + values[1]);
                 res.end();
             });
         }
