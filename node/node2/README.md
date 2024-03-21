@@ -22,4 +22,4 @@ O servidor usa a variável de ambiente `PORT` para determinar em qual porta escu
 
 - Node.js
 - dotenv: para carregar variáveis de ambiente.
-- Express
+

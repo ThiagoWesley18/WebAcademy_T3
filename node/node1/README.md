@@ -18,4 +18,4 @@ Este projeto é um servidor HTTP simples criado usando Node.js. Ele lê o conte�
 
 - Node.js
 - dotenv: para carregar variáveis de ambiente.
-- Express
+
