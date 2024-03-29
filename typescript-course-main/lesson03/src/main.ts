@@ -6,9 +6,13 @@ let mixedData: any = ['EVH', 1984, true] // nao recomendado
 
 stringArr[0] = 'John'
 stringArr.push('hey')
+console.log(stringArr)
 
 guitars[0] = 1984
 guitars.unshift('Jim')
+console.log(guitars)
+
+
 
 let test = []
 let bands: string[] = []

@@ -1,11 +1,13 @@
 "use strict";
 let stringArr = ['one', 'hey', 'Dave'];
-let guitars = ['Strat', 'Les Paul', 5150];
-let mixedData = ['EVH', 1984, true];
+let guitars = ['Strat', 'Les Paul', 5150]; // nao recomendado
+let mixedData = ['EVH', 1984, true]; // nao recomendado
 stringArr[0] = 'John';
 stringArr.push('hey');
+console.log(stringArr);
 guitars[0] = 1984;
 guitars.unshift('Jim');
+console.log(guitars);
 let test = [];
 let bands = [];
 bands.push('Van Halen');
