@@ -4,7 +4,7 @@ let remover: HTMLElement = document.querySelector('#remover') as HTMLElement;
 let modificar: HTMLElement = document.querySelector('#modificar') as HTMLElement;
 let paiLinha: HTMLElement = document.querySelector('#paiLinha') as HTMLElement;
 
-
+// Tratamento do evento de Adição de lembrete
 add.addEventListener('click', () => {
     let linhas: NodeListOf<Element> = document.getElementsByName('linha');
     let colunas: number = linhas.length > 0 ? linhas[linhas.length-1].querySelectorAll('.col').length : 0;
@@ -53,7 +53,7 @@ add.addEventListener('click', () => {
         cardBody.appendChild(cardTextDataInicio);
         cardBody.appendChild(cardTextDataFim);
         cardBody.appendChild(cardTextDesc);
-    // cria linha quando tiver 4 colunas    
+    // cria linha quando tiver 4 colunas, senão adiciona a coluna na mesma linha    
     }else if(colunas == 4){
         let linha: HTMLDivElement = document.createElement('div');
         linha.setAttribute('class', 'row row-col-1 col-md-4 col-sm-2 g-3 w-100 h-100');
@@ -79,29 +79,32 @@ add.addEventListener('click', () => {
 
  });
 
-    remover.addEventListener('click', () => {
-            // pegando todos os titulos dos cards
-            let titulos: NodeListOf<HTMLDivElement> = document.querySelectorAll('.card-title');
+ // tratamento do evento de remoção 
+remover.addEventListener('click', () => {
+        // pegando todos os titulos dos cards
+        let titulos: NodeListOf<HTMLDivElement> = document.querySelectorAll('.card-title');
 
-            // pegando o valor do input
-            let elemento: HTMLInputElement = document.querySelector('#tituloRemover') as HTMLInputElement;
-            let elementoRemover: HTMLElement;
+        // pegando o valor do input
+        let elemento: HTMLInputElement = document.querySelector('#tituloRemover') as HTMLInputElement;
+        let elementoRemover: HTMLElement;
 
-            // verificando se o valor do input é igual ao titulo do card
-            if (titulos.length > 0) {
-                // removendo o card que tem o titulo igual ao valor do input
-                titulos.forEach((linha) => {
-                    if(linha.textContent == elemento.value){
-                        elementoRemover = linha.parentElement as HTMLElement;
-                        elementoRemover = elementoRemover.parentElement as HTMLElement;
-                        elementoRemover = elementoRemover.parentElement as HTMLElement;
-                        elementoRemover.remove();
-                        
-                    }
-                });
-            }
-        });
+        // verificando se o valor do input é igual ao titulo do card
+        if (titulos.length > 0) {
+            // removendo o card que tem o titulo igual ao valor do input
+            titulos.forEach((linha) => {
+                // volta 3 elementos na arvore DOM para remover o card coluna
+                if(linha.textContent == elemento.value){
+                    elementoRemover = linha.parentElement as HTMLElement;
+                    elementoRemover = elementoRemover.parentElement as HTMLElement;
+                    elementoRemover = elementoRemover.parentElement as HTMLElement;
+                    elementoRemover.remove();
+                    
+                }
+            });
+        }
+    });
 
+ // Tratamento do evento de Modificação de lembrete   
  modificar.addEventListener('click', () => {
     // pegando todos os titulos dos cards
     let titulos: NodeListOf<HTMLDivElement> = document.querySelectorAll('.card-title');
