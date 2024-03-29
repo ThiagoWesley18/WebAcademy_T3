@@ -1,8 +1,8 @@
-let stringArr = ['one', 'hey', 'Dave']
+let stringArr: string[] = ['one', 'hey', 'Dave']
 
-let guitars = ['Strat', 'Les Paul', 5150]
+let guitars: any = ['Strat', 'Les Paul', 5150] // nao recomendado
 
-let mixedData = ['EVH', 1984, true]
+let mixedData: any = ['EVH', 1984, true] // nao recomendado
 
 stringArr[0] = 'John'
 stringArr.push('hey')

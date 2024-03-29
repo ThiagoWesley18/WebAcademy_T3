@@ -8,7 +8,7 @@ meaningOfLife = 42
 isLoading = true
 album = 5150
 
-const sum = (a: number, b: string) => {
+const sum = (a: number, b: number):number => {
     return a + b
 }
 
