@@ -1,8 +1,8 @@
 
-let add: HTMLElement = document.querySelector('#add') as HTMLElement;
-let remover: HTMLElement = document.querySelector('#remover') as HTMLElement;
-let modificar: HTMLElement = document.querySelector('#modificar') as HTMLElement;
-let paiLinha: HTMLElement = document.querySelector('#paiLinha') as HTMLElement;
+let add:  HTMLDivElement= document.querySelector('#add')!;
+let remover:  HTMLDivElement = document.querySelector('#remover')!;
+let modificar:  HTMLDivElement = document.querySelector('#modificar')!;
+let paiLinha:  HTMLDivElement = document.querySelector('#paiLinha')!;
 
 // Tratamento do evento de Adição de lembrete
 add.addEventListener('click', () => {
@@ -10,10 +10,10 @@ add.addEventListener('click', () => {
     let colunas: number = linhas.length > 0 ? linhas[linhas.length-1].querySelectorAll('.col').length : 0;
     
     // criando os elementos dos inputs
-    const titulo: HTMLInputElement = document.querySelector('#titulo') as HTMLInputElement;
-    const dataInicio: HTMLInputElement = document.querySelector('#dataIn') as HTMLInputElement;
-    const dataFim: HTMLInputElement = document.querySelector('#dataOut') as HTMLInputElement;
-    const desc: HTMLInputElement = document.querySelector('#desc') as HTMLInputElement;
+    const titulo: HTMLInputElement = document.querySelector('#titulo')!;
+    const dataInicio: HTMLInputElement = document.querySelector('#dataIn')!;
+    const dataFim: HTMLInputElement = document.querySelector('#dataOut')!;
+    const desc: HTMLInputElement = document.querySelector('#desc')!;
     
     // criando os elementos para os cards
     let col: HTMLDivElement = document.createElement('div');
@@ -71,7 +71,7 @@ remover.addEventListener('click', () => {
         let titulos: NodeListOf<HTMLDivElement> = document.querySelectorAll('.card-title');
 
         // pegando o valor do input
-        let elemento: HTMLInputElement = document.querySelector('#tituloRemover') as HTMLInputElement;
+        let elemento: HTMLInputElement = document.querySelector('#tituloRemover')!;
         let elementoRemover: HTMLElement;
 
         // verificando se o valor do input é igual ao titulo do card
@@ -80,9 +80,9 @@ remover.addEventListener('click', () => {
             titulos.forEach((linha) => {
                 // volta 3 elementos na arvore DOM para remover o card coluna
                 if(linha.textContent == elemento.value){
-                    elementoRemover = linha.parentElement as HTMLElement;
-                    elementoRemover = elementoRemover.parentElement as HTMLElement;
-                    elementoRemover = elementoRemover.parentElement as HTMLElement;
+                    elementoRemover = linha.parentElement!;
+                    elementoRemover = elementoRemover.parentElement!;
+                    elementoRemover = elementoRemover.parentElement!;
                     elementoRemover.remove();
                     
                 }
@@ -96,12 +96,12 @@ remover.addEventListener('click', () => {
     let titulos: NodeListOf<HTMLDivElement> = document.querySelectorAll('.card-title');
 
     // pegando o valor do input
-    let titulo: HTMLInputElement = document.querySelector('#modTitulo') as HTMLInputElement;
-    let dataInicio: HTMLInputElement = document.querySelector('#modDataIn') as HTMLInputElement;
-    let dataFim: HTMLInputElement = document.querySelector('#modDataOut') as HTMLInputElement;
-    let desc: HTMLInputElement = document.querySelector('#ModDesc') as HTMLInputElement;
+    let titulo: HTMLInputElement = document.querySelector('#modTitulo')!;
+    let dataInicio: HTMLInputElement = document.querySelector('#modDataIn')!;
+    let dataFim: HTMLInputElement = document.querySelector('#modDataOut')!;
+    let desc: HTMLInputElement = document.querySelector('#ModDesc')!;
 
-    let elemento: HTMLLIElement;
+    let elemento: HTMLElement;
 
     // verificando se o valor do input é igual ao titulo do card
     if (titulos.length > 0) {
@@ -110,16 +110,16 @@ remover.addEventListener('click', () => {
             if(linha.textContent == titulo.value){
                 
                 if(dataInicio.value != null){
-                    elemento = linha.nextElementSibling as HTMLLIElement;
+                    elemento = linha.nextElementSibling as HTMLElement;
                     elemento.textContent = "Data de início : " + dataInicio.value;
                 }
                 if(dataFim.value != null){
-                    elemento = elemento.nextElementSibling as HTMLLIElement;
+                    elemento = elemento.nextElementSibling as HTMLElement;
                     elemento.textContent = "Data de fim : " + dataFim.value;
                 }
                 if(desc.value != null){
                     
-                    elemento = elemento.nextElementSibling as HTMLLIElement;
+                    elemento = elemento.nextElementSibling as HTMLElement;
                     elemento.innerHTML = `<p>Descrição:</p> <p style="border:3px solid black" >${desc.value}</p>`;
                     
                 }

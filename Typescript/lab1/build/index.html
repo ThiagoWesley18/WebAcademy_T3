@@ -38,31 +38,31 @@
         </div>   
     </main>
     
-     <!-- modal novo lembrete -->
+     <!-- modal novo aluno-->
      <div class="modal fade " id="novoProduto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Novo Lembrete</h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Novo Aluno</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form>
               <div class="mb-3">
-                <label for="titulo" class="form-label">Titulo</label>
-                <input type="text" class="form-control" id="titulo" required>
+                <label for="nome" class="form-label">Nome Completo</label>
+                <input type="text" class="form-control" id="nome" required>
               </div>
               <div class="mb-3">
-                <label for="dataIn" class="form-label">Data da Inserção</label>
-                <input type="date" class="form-control" id="dataIn" required>
+                <label for="idade" class="form-label">Idade</label>
+                <input type="number" class="form-control" id="idade" required>
               </div>
               <div class="mb-3">
-                <label class="form-label" for="dataOut">Data Limite</label>
-                <input type="date" class="form-control"  id="dataOut" required>
+                <label class="form-label" for="altura">Altura</label>
+                <input type="number" class="form-control"  id="altura" required>
               </div>
               <div class="mb-3">
-                <label class="form-label" for="desc">Descrição</label>
-                <input type="text" class="form-control"  id="desc" required>
+                <label class="form-label" for="peso">Peso</label>
+                <input type="text" class="form-control"  id="peso" required>
               </div>
                 <button id="add" type="button" class="btn btn-success" data-bs-dismiss="modal">Adicionar Lembrete</button>
             </form>
@@ -82,11 +82,11 @@
           <div class="modal-body">
             <form>
               <div class="mb-3">
-                <label for="tituloRemover" class="form-label">Titulo</label>
-                <input type="text" class="form-control" id="tituloRemover" required>
+                <label for="removerAluno" class="form-label">Nome do Aluno</label>
+                <input type="text" class="form-control" id="removerAluno" required>
               </div>
               </div>
-                <button id="remover" type="button" class="btn btn-danger" data-bs-dismiss="modal">Remover Lembrete</button>
+                <button id="remover" type="button" class="btn btn-danger" data-bs-dismiss="modal">Remover Aluno</button>
             </form>
           </div>
         </div>
@@ -98,26 +98,26 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modificar Lembrete</h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modificar Aluno</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form>
               <div class="mb-3">
-                <label for="modTitulo" class="form-label">Titulo</label>
-                <input type="text" class="form-control" id="modTitulo" required>
+                <label for="nome" class="form-label">Nome Completo</label>
+                <input type="text" class="form-control" id="nome" required>
               </div>
               <div class="mb-3">
-                <label for="modDataIn" class="form-label">Data da Inserção</label>
-                <input type="date" class="form-control" id="modDataIn" required>
+                <label for="idade" class="form-label">Idade</label>
+                <input type="number" class="form-control" id="idade" required>
               </div>
               <div class="mb-3">
-                <label class="form-label" for="modDataOut">Data Limite</label>
-                <input type="date" class="form-control"  id="modDataOut" required>
+                <label class="form-label" for="altura">Altura</label>
+                <input type="number" class="form-control"  id="altura" required>
               </div>
               <div class="mb-3">
-                <label class="form-label" for="ModDesc">Descrição</label>
-                <input type="text" class="form-control"  id="ModDesc" required>
+                <label class="form-label" for="peso">Peso</label>
+                <input type="text" class="form-control"  id="peso" required>
               </div>
                 <button id="modificar" type="button" class="btn btn-success" data-bs-dismiss="modal">Modificar</button>
             </form>

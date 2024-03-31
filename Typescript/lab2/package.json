@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "@typescript-eslint/parser": "^7.4.0",
+    "prettier": "^3.2.5"
+  },
+  "dependencies": {
+    "@types/chart.js": "^2.9.41"
+  }
+}
