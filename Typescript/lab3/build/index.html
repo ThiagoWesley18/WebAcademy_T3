@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>TW</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+     
+
+  </head>
+  <body class="min-vh-100 min-vw-100">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md bg-light">
+      <div class="container-fluid">
+        
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="navbar-brand">Loja TW</li>
+          </ul>
+         
+        </div>
+      </div>
+    </nav>
+    <!-- navbar -->
+
+    <!-- Estatística-->
+    <main class="container text-center">
+          <!-- Pie Chart -->
+          <div class="row d-flex justify-content-center align-items-center" >
+            <div class="col">
+                <div class="card shadow">
+                    <!-- Card Header - Dropdown -->
+                    <div
+                        class="card-header d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">Estatística</h6>
+                        <div class="dropdown no-arrow">
+                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                aria-labelledby="dropdownMenuLink">
+                                <div class="dropdown-header">Dropdown Header:</div>
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Body -->
+                    <div class="card-body">
+                        <div class="chart-pie ">
+                            <canvas id="myBarChart"></canvas>
+                        </div>
+                      
+                    </div>
+                </div>
+              </div>  
+          </div>  
+          
+           <!-- listagem de produtos -->
+          <div class="row">
+            <p class="d-flex justify-content-start my-2"><b>Produtos:</b></p>
+            <div class="col">
+              <div class="card">
+                <img src="./assets/placeholder-image.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">TV</h5>
+                  <p class="card-text">Modelo TV01</p>
+                  <p class="card-text">Res. 4K</p>
+                  <p class="card-text">tam. 42 pol</p>
+                  <p class="card-text">Panasonic</p>
+                  <p class="card-text">R$5.400,00</p>
+                  <button id="addTv" class="btn btn-primary">Adicionar no Carrinho</button>
+                  <button id="remTv" class="btn btn-danger">Remover do Carrinho</button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img src="./assets/placeholder-image.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Celular</h5>
+                  <p class="card-text">Moto Edge</p>
+                  <p class="card-text">6GB ram</p>
+                  <p class="card-text">Motorola</p>
+                  <p class="card-text">R$2.400,00</p>
+                  <button id="addCelular" class="btn btn-primary">Adicionar no Carrinho</button>
+                  <button id="remCelular" class="btn btn-danger">Remover do Carrinho</button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img src="./assets/placeholder-image.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Bicicleta</h5>
+                  <p class="card-text">Caloi Max</p>
+                  <p class="card-text">Aro 29</p>
+                  <p class="card-text">Caloi</p>
+                  <p class="card-text">R$1.500,00</p>
+                  <button id="addBike" class="btn btn-primary">Adicionar no Carrinho</button>
+                  <button id="remBike" class="btn btn-danger">Remover do Carrinho</button>
+                </div>
+              </div>
+            </div>  
+          </div>
+   
+    
+    
+  
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
