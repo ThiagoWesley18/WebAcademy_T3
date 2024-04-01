@@ -1,20 +1,9 @@
-# Aplicação de Estatísticas para Turma de Educação Física
+# Aplicação de Compras de Produtos
 
 ## Descrição
+Este projeto é uma aplicação simplificada de carrinho de compras. Ele permite que os usuários adicionem diversos produtos ao carrinho e visualizem o valor total de suas compras.
 
-Este projeto é uma aplicação intuitiva e fácil de usar, projetada para permitir aos usuários gerenciar e acompanhar as estatísticas de uma turma de educação física. Para o cadastro dos alunos, as seguintes informações são necessárias:
-
-- Nome completo
-- Idade
-- Altura
-- Peso
-
-Esta aplicação é a ferramenta ideal para professores de educação física, treinadores e administradores escolares que desejam manter um registro organizado e facilmente acessível das estatísticas da turma. As estatísticas fornecidas pela aplicação incluem:
-
-- Número total de alunos
-- Média de idades
-- Média de alturas
-- Média de pesos
+Os usuários podem navegar por uma variedade de produtos e adicionar os que desejam ao carrinho. A aplicação atualiza automaticamente o valor total do carrinho à medida que novos produtos são adicionados.
 
 ## Tecnologias utilizadas
 - TypeScript
@@ -22,12 +11,12 @@ Esta aplicação é a ferramenta ideal para professores de educação física, t
 - Bootstrap
 
 ## Funcionalidades principais
-- Criar e inserir novos alunos na turma
-- Editar informações dos alunos existentes
-- Apagar alunos da turma
+- Adicionar novo produto no carrinho
+- Apagar um produto do carrinho
+- Visualização do valor total do carrinho
 
 ## Instalação
 1. Clone este repositório.
 2. Abra o arquivo `index.html` em seu navegador.
-3. Comece a adicionar os alunos
+3. Comece a adicionar os produtos no carrinho
 
