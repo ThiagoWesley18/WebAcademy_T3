@@ -17,6 +17,6 @@ Os usuários podem navegar por uma variedade de produtos e adicionar os que dese
 
 ## Instalação
 1. Clone este repositório.
-2. Abra o arquivo `index.html` em seu navegador.
+2. Abra o arquivo `build/index.html` em seu navegador.
 3. Comece a adicionar os produtos no carrinho
 

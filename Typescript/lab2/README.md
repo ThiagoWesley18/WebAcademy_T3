@@ -28,6 +28,6 @@ Esta aplicação é a ferramenta ideal para professores de educação física, t
 
 ## Instalação
 1. Clone este repositório.
-2. Abra o arquivo `index.html` em seu navegador.
+2. Abra o arquivo `build/index.html` em seu navegador.
 3. Comece a adicionar os alunos
 
