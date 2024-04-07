@@ -20,14 +20,12 @@ const logger = (formato: "simples" | "completo") => {
     if(formato === "simples"){
         return async (req: Request, Res: Response, next: NextFunction) => {
             const logs = ` ${new Date().toISOString()} - ${req.url} - ${req.method}\n`;
-            console.log(logs);
             await salvelogger(`${formato}`, logs);
             next();
         };
     }else if(formato === "completo"){
         return async (req: Request, Res: Response, next: NextFunction) => {
             const logs = ` ${new Date().toISOString()} - ${req.method}  - ${req.url} - ${req.httpVersion} - ${req.get('User-Agent')}\n`;
-            console.log(logs);
             await salvelogger(`${formato}`, logs);
             next();
         };

@@ -33,7 +33,6 @@ const logger = (formato) => {
     if (formato === "simples") {
         return (req, Res, next) => __awaiter(void 0, void 0, void 0, function* () {
             const logs = ` ${new Date().toISOString()} - ${req.url} - ${req.method}\n`;
-            console.log(logs);
             yield salvelogger(`${formato}`, logs);
             next();
         });
@@ -41,7 +40,6 @@ const logger = (formato) => {
     else if (formato === "completo") {
         return (req, Res, next) => __awaiter(void 0, void 0, void 0, function* () {
             const logs = ` ${new Date().toISOString()} - ${req.method}  - ${req.url} - ${req.httpVersion} - ${req.get('User-Agent')}\n`;
-            console.log(logs);
             yield salvelogger(`${formato}`, logs);
             next();
         });

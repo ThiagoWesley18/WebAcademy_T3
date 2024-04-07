@@ -3,6 +3,7 @@ import express  from 'express';
 import dotenv from 'dotenv';
 import validateEnv from './utils/envalid';
 import logger from './middleware/logger';
+import  router  from './router/router';
 
 /*
 dotenv.config({ path: `.env.${process.env.NODE_ENV}` }); // cria um arquivo .env.development ou .env.production 
@@ -15,11 +16,16 @@ validateEnv(); // valida se as variáveis de ambiente estão definidas
 const PORT = process.env.PORT;
 const app = express();
 
+// criamos nosso middleware logger
 app.use(logger("completo"));
 
-app.get('/', (req, res)  => {
-    res.send('Hello World');
-});
+// como passar um pagina html para o cliente
+app.use("/html", express.static(`${__dirname}/../public/`));
+app.use("/css", express.static(`${__dirname}/../public/css`));
+app.use("/js", express.static(`${__dirname}/../public/js`));
+
+
+app.use(router);
 
 app.listen(PORT, () => {
     console.log(`Aplicação na porta ${PORT}`);
