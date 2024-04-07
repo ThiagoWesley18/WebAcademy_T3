@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>ModuloExpress</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">
+            <p>Alguns professores do Icomp/UFAM</p>
+            <ul>
+                {{#each profes}}
+                    <li>{{nome}} - sala {{sala}}</li>
+                {{/each}}
+            </ul>
+        </div>
+    </body>
+</html>
