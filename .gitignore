@@ -397,5 +397,6 @@ FodyWeavers.xsd
 *.sln.iml
 
 .env
+logs/
 node_modules/
 ```
