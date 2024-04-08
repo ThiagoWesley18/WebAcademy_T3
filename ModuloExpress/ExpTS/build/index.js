@@ -19,7 +19,9 @@ const PORT = process.env.PORT;
 const app = (0, express_1.default)();
 // configuramos o handlebars
 app.engine("handlebars", (0, express_handlebars_1.engine)({
-    helpers: require(`${__dirname}/views/main/helpers/helpers`)
+    helpers: require(`${__dirname}/views/helpers/helpers`),
+    layoutsDir: `src/views/layouts`,
+    defaultLayout: 'main',
 }));
 app.set("view engine", "handlebars");
 app.set("views", './src/views/main');

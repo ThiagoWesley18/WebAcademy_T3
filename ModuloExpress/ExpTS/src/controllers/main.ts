@@ -8,8 +8,7 @@ export const hello = (req: Request, res: Response) => {
 
 export const hb1 = (req: Request, res: Response) => {
     res.render('hb1', {
-        mensagem: 'Olá, você está aprendendo Express + HBS!',
-        layout: false,
+        mensagem: 'Olá, você está aprendendo Express + HBS!'
     });
 }
 
@@ -17,8 +16,7 @@ export const hb2 = (req: Request, res: Response) => {
     res.render('hb2', {
         poweredByNodejs: true,
         name: 'Express',
-        type: 'Framework',
-        layout: false,
+        type: 'Framework'
     });
 }
 
@@ -29,7 +27,7 @@ export const hb3 = (req: Request, res: Response) => {
         { nome: 'Edleno Moura', sala: 1236 },
         { nome: 'Elaine Harada', sala: 1231 }
     ];
-    res.render('hb3', { profes, layout: false });
+    res.render('hb3', { profes});
 }
 
 export const hb4 = (req: Request, res: Response) =>{
@@ -42,7 +40,7 @@ export const hb4 = (req: Request, res: Response) =>{
         { nome: 'Docker', type: 'Virtualization', poweredByNodejs: false },
         { nome: 'Sequelize', type: 'ORM tool', poweredByNodejs: true }
        ];
-    res.render('hb4', { tecnologias, layout: false });
+    res.render('hb4', { tecnologias});
 }
 
 export const lorem = (req: Request, res: Response)  => {
