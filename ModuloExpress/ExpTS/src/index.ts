@@ -1,4 +1,3 @@
-
 import express  from 'express';
 import dotenv from 'dotenv';
 import validateEnv from './utils/envalid';
@@ -18,9 +17,15 @@ const PORT = process.env.PORT;
 const app = express();
 
 // configuramos o handlebars
-app.engine("handlebars", engine());
+app.engine("handlebars",  engine({
+    helpers: require(`${__dirname}/views/helpers/helpers`)
+   }));
 app.set("view engine", "handlebars");
-app.set("views", `./views`);
+app.set("views", './src/views');
+
+
+
+
 
 // criamos nosso middleware logger
 app.use(logger("completo"));

@@ -18,9 +18,11 @@ dotenv_1.default.config(); // informamos se é developement ou production no arq
 const PORT = process.env.PORT;
 const app = (0, express_1.default)();
 // configuramos o handlebars
-app.engine("handlebars", (0, express_handlebars_1.engine)());
+app.engine("handlebars", (0, express_handlebars_1.engine)({
+    helpers: require(`${__dirname}/views/helpers/helpers`)
+}));
 app.set("view engine", "handlebars");
-app.set("views", `./views`);
+app.set("views", './src/views');
 // criamos nosso middleware logger
 app.use((0, logger_1.default)("completo"));
 // como passar um pagina html estática para o cliente
