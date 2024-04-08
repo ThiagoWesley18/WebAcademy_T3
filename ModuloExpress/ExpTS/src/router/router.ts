@@ -1,57 +1,19 @@
 import { Router } from 'express';
-import { gerarTextoLoremIpisum } from './../utils/loremText';
+import { hello, hb1, hb2, hb3, hb4, lorem } from './../controllers/main';
 
-gerarTextoLoremIpisum(3);
 
 const router = Router();
 
-router.get('/', (req, res) => {
-    res.send('Hello World');
-});
+router.get('/', hello);
 
-router.get('/hb1', (req, res) => {
-    res.render('hb1', {
-        mensagem: 'Olá, você está aprendendo Express + HBS!',
-        layout: false,
-    });
-});
+router.get('/hb1', hb1);
 
-router.get('/hb2', (req, res) => {
-    res.render('hb2', {
-        poweredByNodejs: true,
-        name: 'Express',
-        type: 'Framework',
-        layout: false,
-    });
-});
+router.get('/hb2', hb2);
 
-router.get('/hb3', (req, res) => {
-    const profes = [
-        { nome: 'David Fernandes', sala: 1238 },
-        { nome: 'Horácio Fernandes', sala: 1233 },
-        { nome: 'Edleno Moura', sala: 1236 },
-        { nome: 'Elaine Harada', sala: 1231 }
-    ];
-    res.render('hb3', { profes, layout: false });
-});
+router.get('/hb3', hb3);
 
-router.get('/hb4', (req, res) =>{
-    const tecnologias = [
-        { nome: 'Express', type: 'Framework', poweredByNodejs: true },
-        { nome: 'Laravel', type: 'Framework', poweredByNodejs: false },
-        { nome: 'React', type: 'Library', poweredByNodejs: true },
-        { nome: 'Handlebars', type: 'Engine View', poweredByNodejs: true },
-        { nome: 'Django', type: 'Framework', poweredByNodejs: false },
-        { nome: 'Docker', type: 'Virtualization', poweredByNodejs: false },
-        { nome: 'Sequelize', type: 'ORM tool', poweredByNodejs: true }
-       ];
-    res.render('hb4', { tecnologias, layout: false });
-});
+router.get('/hb4', hb4);
 
-router.get('/lorem/:paragrafos', (req, res)  => {
-    const { paragrafos } = req.params;
-    const numParagrafos = Number(paragrafos); 
-    res.send(gerarTextoLoremIpisum(numParagrafos));
-});
+router.get('/lorem/:paragrafos', lorem);
 
 export default router;

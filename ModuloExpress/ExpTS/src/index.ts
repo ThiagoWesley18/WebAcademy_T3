@@ -18,10 +18,10 @@ const app = express();
 
 // configuramos o handlebars
 app.engine("handlebars",  engine({
-    helpers: require(`${__dirname}/views/helpers/helpers`)
+    helpers: require(`${__dirname}/views/main/helpers/helpers`)
    }));
 app.set("view engine", "handlebars");
-app.set("views", './src/views');
+app.set("views", './src/views/main');
 
 
 
