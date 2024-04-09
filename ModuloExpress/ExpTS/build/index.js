@@ -18,8 +18,7 @@ dotenv_1.default.config(); // informamos se é developement ou production no arq
 (0, envalid_1.default)(); // valida se as variáveis de ambiente estão definidas
 const PORT = process.env.PORT;
 const app = (0, express_1.default)();
-app.engine(// configuramos o handlebars
-"handlebars", (0, express_handlebars_1.engine)({
+app.engine("handlebars", (0, express_handlebars_1.engine)({
     helpers: require(`${__dirname}/views/helpers/helpers`), // para as funções helpers que serão usadas nas views
     layoutsDir: `src/views/layouts`, // onde estão os layouts comuns a todas as páginas
     defaultLayout: "main", // layout padrão para onde irão as views personalizadas do diretório views/main
@@ -35,6 +34,10 @@ app.use((0, node_sass_middleware_1.default)({
 }));
 app.use("/html", express_1.default.static(`${__dirname}/../public/`)); // como passar um pagina html estática para o cliente (Assets)
 app.use("/css", express_1.default.static(`${__dirname}/../public/css`)); // passar o arquivo css estático usado no layout padrão da view/main (Assets)
+app.use('/js', [
+    express_1.default.static(`${__dirname}/../public/js`),
+    express_1.default.static(`${__dirname}/../node_modules/bootstrap/dist/js/`)
+]);
 app.use(router_1.default);
 app.listen(PORT, () => {
     console.log(`Aplicação na porta ${PORT}`);

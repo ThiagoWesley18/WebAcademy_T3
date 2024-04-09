@@ -9,7 +9,7 @@ exports.hello = hello;
 const hb1 = (req, res) => {
     res.render("hb1", {
         mensagem: "Universidade Federal do Amazonas",
-        layout: "mainSCSS",
+        layout: "main",
     });
 };
 exports.hb1 = hb1;

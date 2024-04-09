@@ -20,9 +20,7 @@ const PORT = process.env.PORT;
 const app = express();
 
 
-app.engine(                                                     // configuramos o handlebars
-  "handlebars",
-  engine({
+app.engine("handlebars", engine({                               // configuramos o handlebars
     helpers: require(`${__dirname}/views/helpers/helpers`),     // para as funções helpers que serão usadas nas views
     layoutsDir: `src/views/layouts`,                            // onde estão os layouts comuns a todas as páginas
     defaultLayout: "main",                                      // layout padrão para onde irão as views personalizadas do diretório views/main
@@ -41,8 +39,13 @@ app.use(sass({
     prefix: "/css"                                              // prefixo para o arquivo css
 }));
 
+
 app.use("/html", express.static(`${__dirname}/../public/`));    // como passar um pagina html estática para o cliente (Assets)
 app.use("/css", express.static(`${__dirname}/../public/css`));  // passar o arquivo css estático usado no layout padrão da view/main (Assets)
+app.use('/js', [
+  express.static(`${__dirname}/../public/js`),
+  express.static(`${__dirname}/../node_modules/bootstrap/dist/js/`)
+  ]);
 
 app.use(router);
 

@@ -8,7 +8,7 @@ export const hello = (req: Request, res: Response) => {
 export const hb1 = (req: Request, res: Response) => {
   res.render("hb1", {
     mensagem: "Universidade Federal do Amazonas",
-    layout: "mainSCSS",
+    layout: "main",
   });
 };
 
