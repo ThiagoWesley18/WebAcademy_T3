@@ -39,7 +39,7 @@ const logger = (formato) => {
     }
     else if (formato === "completo") {
         return (req, Res, next) => __awaiter(void 0, void 0, void 0, function* () {
-            const logs = ` ${new Date().toISOString()} - ${req.method}  - ${req.url} - ${req.httpVersion} - ${req.get('User-Agent')}\n`;
+            const logs = ` ${new Date().toISOString()} - ${req.method}  - ${req.url} - ${req.httpVersion} - ${req.get("User-Agent")}\n`;
             yield salvelogger(`${formato}`, logs);
             next();
         });
@@ -64,4 +64,4 @@ exports.default = logger;
 – fs.symlink(): cria um link simbólico
 – fs.unlink(): apaga um arquivo ou link
 – fs.writeFile(): escreve dados em um arquivo
-*/ 
+*/

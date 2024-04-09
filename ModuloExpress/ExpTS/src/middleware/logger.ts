@@ -1,42 +1,41 @@
-import {Request, Response ,NextFunction} from "express";
+import { Request, Response, NextFunction } from "express";
 import fs from "fs/promises";
 
 const salvelogger = async (filename: string, logs: string) => {
-    const logPath = process.env.FOLDER_LOGS!;
-    try {
-        await fs.access(logPath);
-    } catch (error) {
-        await fs.mkdir(logPath);
-    }
+  const logPath = process.env.FOLDER_LOGS!;
+  try {
+    await fs.access(logPath);
+  } catch (error) {
+    await fs.mkdir(logPath);
+  }
 
-    try {
-        await fs.appendFile(`${logPath}/${filename}.log`, logs);
-    }catch(error){
-        if (error) throw new Error(error.toString());
-    }
+  try {
+    await fs.appendFile(`${logPath}/${filename}.log`, logs);
+  } catch (error) {
+    if (error) throw new Error(error.toString());
+  }
 };
 
 const logger = (formato: "simples" | "completo") => {
-    if(formato === "simples"){
-        return async (req: Request, Res: Response, next: NextFunction) => {
-            const logs = ` ${new Date().toISOString()} - ${req.url} - ${req.method}\n`;
-            await salvelogger(`${formato}`, logs);
-            next();
-        };
-    }else if(formato === "completo"){
-        return async (req: Request, Res: Response, next: NextFunction) => {
-            const logs = ` ${new Date().toISOString()} - ${req.method}  - ${req.url} - ${req.httpVersion} - ${req.get('User-Agent')}\n`;
-            await salvelogger(`${formato}`, logs);
-            next();
-        };
-    }else{
-        return (req: Request, Res: Response, next: NextFunction) => {
-            console.log("Formato de log não suportado");
-            next();
-        }
-
-    } 
-} 
+  if (formato === "simples") {
+    return async (req: Request, Res: Response, next: NextFunction) => {
+      const logs = ` ${new Date().toISOString()} - ${req.url} - ${req.method}\n`;
+      await salvelogger(`${formato}`, logs);
+      next();
+    };
+  } else if (formato === "completo") {
+    return async (req: Request, Res: Response, next: NextFunction) => {
+      const logs = ` ${new Date().toISOString()} - ${req.method}  - ${req.url} - ${req.httpVersion} - ${req.get("User-Agent")}\n`;
+      await salvelogger(`${formato}`, logs);
+      next();
+    };
+  } else {
+    return (req: Request, Res: Response, next: NextFunction) => {
+      console.log("Formato de log não suportado");
+      next();
+    };
+  }
+};
 
 export default logger;
 

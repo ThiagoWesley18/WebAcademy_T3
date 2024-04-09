@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const envalid_1 = require("envalid");
 const validateEnv = () => {
     (0, envalid_1.cleanEnv)(process.env, {
+        // registrará uma mensagem de erro no Node ou lançará no navegador se alguma variavel .env estiver ausente ou inválida.
         NODE_ENV: (0, envalid_1.str)(),
         PORT: (0, envalid_1.port)(),
     });
@@ -28,4 +29,4 @@ devDefault - Um valor de fallback a ser usado somente quando NODE_ENV estiver ex
 desc - Uma string que descreve a variavel .env
 example - Um valor de exemplo para a variavel .env
 docs - Uma URL que leva a uma documentação mais detalhada sobre a variavel .env
-*/ 
+*/

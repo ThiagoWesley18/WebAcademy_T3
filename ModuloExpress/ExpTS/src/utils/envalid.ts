@@ -1,10 +1,11 @@
-import { cleanEnv, port, str } from 'envalid';
+import { cleanEnv, port, str } from "envalid";
 
 const validateEnv = () => {
- cleanEnv(process.env, { // registrará uma mensagem de erro no Node ou lançará no navegador se alguma variavel .env estiver ausente ou inválida.
- NODE_ENV: str(),
- PORT: port(),
- });
+  cleanEnv(process.env, {
+    // registrará uma mensagem de erro no Node ou lançará no navegador se alguma variavel .env estiver ausente ou inválida.
+    NODE_ENV: str(),
+    PORT: port(),
+  });
 };
 export default validateEnv;
 
