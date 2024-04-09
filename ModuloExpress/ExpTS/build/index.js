@@ -24,13 +24,12 @@ app.engine("handlebars", (0, express_handlebars_1.engine)({
     defaultLayout: 'main',
 }));
 app.set("view engine", "handlebars");
-app.set("views", './src/views/main');
+app.set("views", `${__dirname}/../src/views/main`);
 // criamos nosso middleware logger
 app.use((0, logger_1.default)("completo"));
 // como passar um pagina html estática para o cliente
 app.use("/html", express_1.default.static(`${__dirname}/../public/`));
-app.use("/css", express_1.default.static(`${__dirname}/../public/css`));
-app.use("/js", express_1.default.static(`${__dirname}/../public/js`));
+app.use("/css", express_1.default.static(`${__dirname}/../src/views/layouts/css`));
 app.use(router_1.default);
 app.listen(PORT, () => {
     console.log(`Aplicação na porta ${PORT}`);

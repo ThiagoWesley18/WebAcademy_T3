@@ -1,47 +1,70 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     box-sizing: border-box;
 }
 
 .container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
     width: 100vw;
     height: 100vh;
     grid-template-areas: 
-    "header header header header header",
-    "aside main main main aside",
-    "aside main main main aside",
-    "aside main main main aside",
-    "footer footer footer footer footer";
+    "cabeçalho cabeçalho cabeçalho"
+    "lado texto nav"
+    "rodape rodape rodape";
+    gap: 5px;
 }
-.head {
-    grid-area: header;
+.container header{
+    grid-area: cabeçalho;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: row;
+    padding: 3px;
+}
+
+header ul{
     display: flex;
     flex-direction: row;
-    padding: 1rem;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    margin-left: 20px;
+    margin-top: 30px;
 }
 
-.aside {
-    grid-area: aside;
+.container aside {
+    grid-area: lado;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: 3px;
 }
 
-.main {
-    grid-area: main;
+.container nav {
+    grid-area: nav;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: 3px;
 }
 
-.footer {
-    grid-area: footer;
-    padding: 1rem;
+.container main{
+    grid-area: texto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container footer{
+    grid-area: rodape;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
 }

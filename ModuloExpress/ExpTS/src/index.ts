@@ -23,7 +23,7 @@ app.engine("handlebars",  engine({
     defaultLayout: 'main',
    }));
 app.set("view engine", "handlebars");
-app.set("views", './src/views/main');
+app.set("views", `${__dirname}/../src/views/main`);
 
 
 
@@ -34,8 +34,7 @@ app.use(logger("completo"));
 
 // como passar um pagina html estática para o cliente
 app.use("/html", express.static(`${__dirname}/../public/`));
-app.use("/css", express.static(`${__dirname}/../public/css`));
-app.use("/js", express.static(`${__dirname}/../public/js`));
+app.use("/css", express.static(`${__dirname}/../src/views/layouts/css`));
 
 
 app.use(router);
