@@ -27,7 +27,7 @@ app.engine("handlebars", engine({                               // configuramos 
   }),
 );
 app.set("view engine", "handlebars");                           // setamos o view engine para handlebars
-app.set("views", `${__dirname}/../src/views/main`);             // setamos o diretório onde estão as views
+app.set("views", `${__dirname}/../src/views`);             // setamos o diretório onde estão as views personalizadas
 
 app.use(logger("completo"));                                    // criamos nosso middleware logger definido em src/middleware/logger.ts
 

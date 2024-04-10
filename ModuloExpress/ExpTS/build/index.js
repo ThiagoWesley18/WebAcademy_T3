@@ -24,7 +24,7 @@ app.engine("handlebars", (0, express_handlebars_1.engine)({
     defaultLayout: "main", // layout padrão para onde irão as views personalizadas do diretório views/main
 }));
 app.set("view engine", "handlebars"); // setamos o view engine para handlebars
-app.set("views", `${__dirname}/../src/views/main`); // setamos o diretório onde estão as views
+app.set("views", `${__dirname}/../src/views`); // setamos o diretório onde estão as views personalizadas
 app.use((0, logger_1.default)("completo")); // criamos nosso middleware logger definido em src/middleware/logger.ts
 app.use((0, node_sass_middleware_1.default)({
     src: `${__dirname}/../public/scss`, // onde estão os arquivos scss

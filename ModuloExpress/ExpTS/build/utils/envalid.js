@@ -6,6 +6,7 @@ const validateEnv = () => {
         // registrará uma mensagem de erro no Node ou lançará no navegador se alguma variavel .env estiver ausente ou inválida.
         NODE_ENV: (0, envalid_1.str)(),
         PORT: (0, envalid_1.port)(),
+        URL_DB: (0, envalid_1.url)(),
     });
 };
 exports.default = validateEnv;

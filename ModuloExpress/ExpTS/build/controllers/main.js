@@ -7,14 +7,14 @@ const hello = (req, res) => {
 };
 exports.hello = hello;
 const hb1 = (req, res) => {
-    res.render("hb1", {
+    res.render("main/hb1", {
         mensagem: "Universidade Federal do Amazonas",
         layout: "main",
     });
 };
 exports.hb1 = hb1;
 const hb2 = (req, res) => {
-    res.render("hb2", {
+    res.render("main/hb2", {
         poweredByNodejs: true,
         name: "Express",
         type: "Framework",
@@ -29,7 +29,7 @@ const hb3 = (req, res) => {
         { nome: "Edleno Moura", sala: 1236 },
         { nome: "Elaine Harada", sala: 1231 },
     ];
-    res.render("hb3", { profes, layout: "main" });
+    res.render("main/hb3", { profes, layout: "main" });
 };
 exports.hb3 = hb3;
 const hb4 = (req, res) => {
@@ -42,7 +42,7 @@ const hb4 = (req, res) => {
         { nome: "Docker", type: "Virtualization", poweredByNodejs: false },
         { nome: "Sequelize", type: "ORM tool", poweredByNodejs: true },
     ];
-    res.render("hb4", { tecnologias, layout: "main" });
+    res.render("main/hb4", { tecnologias, layout: "main" });
 };
 exports.hb4 = hb4;
 const lorem = (req, res) => {
