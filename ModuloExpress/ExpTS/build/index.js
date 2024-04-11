@@ -38,6 +38,8 @@ app.use('/js', [
     express_1.default.static(`${__dirname}/../public/js`),
     express_1.default.static(`${__dirname}/../node_modules/bootstrap/dist/js/`)
 ]);
+app.use(express_1.default.json()); // middleware para tratar os dados enviados pelo body formulário
+app.use(express_1.default.urlencoded({ extended: true })); // middleware para tratar os dados enviados pelo body formulário
 app.use(router_1.default);
 app.listen(PORT, () => {
     console.log(`Aplicação na porta ${PORT}`);

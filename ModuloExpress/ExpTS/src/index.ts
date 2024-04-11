@@ -27,7 +27,7 @@ app.engine("handlebars", engine({                               // configuramos 
   }),
 );
 app.set("view engine", "handlebars");                           // setamos o view engine para handlebars
-app.set("views", `${__dirname}/../src/views`);             // setamos o diretório onde estão as views personalizadas
+app.set("views", `${__dirname}/../src/views`);                  // setamos o diretório onde estão as views personalizadas
 
 app.use(logger("completo"));                                    // criamos nosso middleware logger definido em src/middleware/logger.ts
 
@@ -46,6 +46,9 @@ app.use('/js', [
   express.static(`${__dirname}/../public/js`),
   express.static(`${__dirname}/../node_modules/bootstrap/dist/js/`)
   ]);
+
+app.use(express.json());                                         // middleware para tratar os dados enviados pelo body formulário
+app.use(express.urlencoded({ extended: true }));                // middleware para tratar os dados enviados pelo body formulário
 
 app.use(router);
 
