@@ -1,0 +1,7 @@
+1- npm i --save-dev prisma typescript ts-node @types/node nodemon   // instalação das dependencias
+
+2- npx prisma init                                                  // inicializa o prisma
+
+3- preferencia->configuraçoes->digite "format"->Default Formatter:prisma-> selecione "Format On Save" // configuração vscode
+
+4- npx prisma migrate dev --name init   // fazer a migraçao do modelo do prisma para o banco de dados

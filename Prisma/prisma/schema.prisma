@@ -1,0 +1,75 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql" // colocamos mysql, no nosso caso
+  url      = env("DATABASE_URL")
+}
+
+model clientes {
+  nome           String
+  email          String           @id @unique
+  celular        String
+  dataNascimento String
+  cpf            String
+  enderecos      enderecos[]
+  lista_Produtos lista_Produtos[]
+}
+
+model enderecos {
+  clienteId   String   @id
+  rua         String
+  numero      String
+  complemento String
+  bairro      String
+  cidade      String
+  estado      String
+  cep         String
+  cliente     clientes @relation(fields: [clienteId], references: [email])
+}
+
+model lista_Produtos {
+  id_cliente      String         @id @unique
+  data            DateTime
+  endereco        String
+  valor_pagamento Float
+  forma_pagamento String
+  desconto        Float
+  clientes        clientes?      @relation(fields: [id_cliente], references: [email])
+  tem_produtos    tem_produtos[]
+}
+
+model tem_produtos {
+  id_lista   String
+  id_produto Int
+  quantidade Int
+  lista      lista_Produtos @relation(fields: [id_lista], references: [id_cliente])
+  produtos   produtos       @relation(fields: [id_produto], references: [id])
+
+  @@id([id_lista, id_produto])
+}
+
+model produtos {
+  id           Int            @id @unique @default(autoincrement())
+  modelo       String
+  estoque      Int
+  categoria    String
+  subcategoria String
+  preco        Float
+  fabricante   String
+  tem_produtos tem_produtos[]
+  numero_serie numero_serie[]
+}
+
+model numero_serie {
+  id_produto   Int      @id
+  numero_serie String
+  produtos     produtos @relation(fields: [id_produto], references: [id])
+}
