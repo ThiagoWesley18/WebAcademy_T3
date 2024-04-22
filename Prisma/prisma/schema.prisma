@@ -13,17 +13,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model clientes {
+model Clientes {
   nome           String
   email          String           @id @unique
   celular        String
   dataNascimento String
   cpf            String
-  enderecos      enderecos[]
-  lista_Produtos lista_Produtos[]
+  enderecos      Enderecos[]
+  lista_Produtos Lista_Produtos[]
 }
 
-model enderecos {
+model Enderecos {
   clienteId   String   @id
   rua         String
   numero      String
@@ -32,31 +32,31 @@ model enderecos {
   cidade      String
   estado      String
   cep         String
-  cliente     clientes @relation(fields: [clienteId], references: [email])
+  cliente     Clientes @relation(fields: [clienteId], references: [email])
 }
 
-model lista_Produtos {
+model Lista_Produtos {
   id_cliente      String         @id @unique
   data            DateTime
   endereco        String
   valor_pagamento Float
   forma_pagamento String
   desconto        Float
-  clientes        clientes?      @relation(fields: [id_cliente], references: [email])
-  tem_produtos    tem_produtos[]
+  clientes        Clientes?      @relation(fields: [id_cliente], references: [email])
+  tem_produtos    Tem_produtos[]
 }
 
-model tem_produtos {
+model Tem_produtos {
   id_lista   String
   id_produto Int
   quantidade Int
-  lista      lista_Produtos @relation(fields: [id_lista], references: [id_cliente])
-  produtos   produtos       @relation(fields: [id_produto], references: [id])
+  lista      Lista_Produtos @relation(fields: [id_lista], references: [id_cliente])
+  produtos   Produtos       @relation(fields: [id_produto], references: [id])
 
   @@id([id_lista, id_produto])
 }
 
-model produtos {
+model Produtos {
   id           Int            @id @unique @default(autoincrement())
   modelo       String
   estoque      Int
@@ -64,12 +64,12 @@ model produtos {
   subcategoria String
   preco        Float
   fabricante   String
-  tem_produtos tem_produtos[]
-  numero_serie numero_serie[]
+  tem_produtos Tem_produtos[]
+  numero_serie Numero_serie[]
 }
 
-model numero_serie {
+model Numero_serie {
   id_produto   Int      @id
   numero_serie String
-  produtos     produtos @relation(fields: [id_produto], references: [id])
+  produtos     Produtos @relation(fields: [id_produto], references: [id])
 }
