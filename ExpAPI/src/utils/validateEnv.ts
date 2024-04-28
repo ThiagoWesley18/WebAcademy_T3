@@ -1,4 +1,3 @@
-import exp from 'constants';
 import {cleanEnv, port, str} from 'envalid';
 
 export const validateEnv = () => {

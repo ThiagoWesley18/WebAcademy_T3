@@ -1,0 +1,49 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: bd_mysql
+    ports:
+      - "3000:3000"
+      - "33000:33000"
+    networks:
+      - bd_network
+    volumes:
+      - volume_mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: pass123
+  
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: bd_phpmyadmin
+    ports:
+      - "5000:80"
+    networks:
+      - bd_network
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_USER: root
+      MYSQL_ROOT_PASSWORD: pass123
+    depends_on:
+      - mysql
+
+networks:
+  bd_network:
+    driver: bridge
+
+volumes:
+  volume_mysql:
+
+# roda os comando do docker compose
+# sudo docker compose up
+
+# lista os container que estão rodando no docker compose
+# sudo docker compose ps
+
+# para os container que estão rodando no docker compose
+# sudo docker compose down
+
+# reestarta os container que estão rodando no docker compose
+# sudo docker compose restart
