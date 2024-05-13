@@ -4,6 +4,8 @@ import validateEnv from './utils/validateEnv';
 import router from './router';
 import cookieParser from 'cookie-parser';
 import setCookieLang from './middlewares/setLangCookie';
+import session from 'express-session';
+import { v4 as uuidv4 } from 'uuid';
 
 
 
@@ -13,6 +15,12 @@ validateEnv();
 const app = express();
 
 app.use(cookieParser());
+app.use(session({
+  genid: (req) => uuidv4(),
+  secret: 'Hi9Cf#mK98',
+  resave: true,
+  saveUninitialized: true
+ }));
 app.use(setCookieLang);
 
 const PORT = process.env.PORT ?? 3000;

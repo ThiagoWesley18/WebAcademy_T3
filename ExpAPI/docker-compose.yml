@@ -5,9 +5,8 @@ services:
     container_name: backend_loja
     build: 
       context: ./backend
-      dockerfile: Dockerfile
     volumes:
-      - ./backend/usr:/app/src
+      - ./backend/src:/app/src
     ports:
       - ${BACKEND_PORT}:${BACKEND_PORT}
 
@@ -15,7 +14,6 @@ services:
     container_name: frontend_loja
     build: 
       context: ./frontend
-      dockerfile: Dockerfile
     volumes:
       - ./frontend/src:/app/src
     ports:
@@ -30,8 +28,7 @@ services:
       - ${MYSQL_PORT}:3306
     environment:
       - MYSQL_DATABASE=${MYSQL_DATABASE}
-      - MYSQL_USER=${MYSQL_USER}
-      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
 
 volumes:
   mysql_data:

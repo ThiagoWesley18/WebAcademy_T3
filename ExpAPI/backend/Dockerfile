@@ -2,15 +2,17 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-COPY . .
+COPY package.json .
 
 RUN npm install
 
-RUN npm run build
+COPY . .
+
+RUN npx prisma generate
 
 EXPOSE 4466
 
-CMD ["npm", "run", "start:prod"]
+CMD ["npm", "start"]
 
 # sudo docker build -t backend_loja .
 
