@@ -7,7 +7,12 @@ import setCookieLang from './middlewares/setLangCookie';
 import session from 'express-session';
 import { v4 as uuidv4 } from 'uuid';
 
-
+declare module "express-session" {
+  interface SessionData {
+  uid: string;
+  tipoUsuario: string
+  }
+ }
 
 
 dotenv.config();
@@ -21,6 +26,7 @@ app.use(session({
   resave: true,
   saveUninitialized: true
  }));
+ 
 app.use(setCookieLang);
 
 const PORT = process.env.PORT ?? 3000;
