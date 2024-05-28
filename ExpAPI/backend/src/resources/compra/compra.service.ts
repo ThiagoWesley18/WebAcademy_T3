@@ -1,16 +1,14 @@
 import { PrismaClient } from "@prisma/client";
-import { ListaCarrinho } from "./compra.types";
 
 const prisma = new PrismaClient();
 
-export const getProdutosCarrinho = async (id: string): Promise<ListaCarrinho | null> =>{
-    return await prisma.produto_no_carrinho.findUnique({
-        select: {
-            usuarioId: true,
-            produtoId: true,
-            quantidade: true,
-            comprado: true,
+
+export const compra = async (usuarioId: string, produtoId: string, quantidade: number) =>{
+    await prisma.compra.create({
+        data: {
+            usuarioId: usuarioId,
+            produtoId: produtoId,
+            quantidade: quantidade,
         },
-        where: {id},
-      });
+    });
 }

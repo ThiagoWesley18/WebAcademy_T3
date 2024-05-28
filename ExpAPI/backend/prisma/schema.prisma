@@ -10,15 +10,14 @@ generator client {
 }
 
 model Produto {
-  id         String   @id @default(uuid()) @db.Char(36)
-  nome       String   @unique @db.VarChar(100)
-  preco      Decimal  @db.Decimal(10, 2)
-  estoque    Int      @db.Int()
-  createdAt  DateTime @default(now()) @map("created_at")
-  updatedAt  DateTime @updatedAt @map("updated_at")
-  carrinhoId String?  @db.Char(36)
+  id        String   @id @default(uuid()) @db.Char(36)
+  nome      String   @unique @db.VarChar(100)
+  preco     Decimal  @db.Decimal(10, 2)
+  estoque   Int      @db.Int()
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
 
-  carrinho Produto_no_carrinho[]
+  comprasProduto Compra[]
 
   @@map("produtos")
 }
@@ -33,7 +32,7 @@ model Usuario {
   createdAt     DateTime    @default(now()) @map("created_at")
   updatedAt     DateTime    @updatedAt @map("updated_at")
 
-  carrinhos Produto_no_carrinho[]
+  compras Compra[]
 
   @@map("usuarios")
 }
@@ -46,18 +45,18 @@ model TipoUsuario {
   @@map("tipos_usuarios")
 }
 
-model Produto_no_carrinho {
-  id         String   @id @default(uuid()) @db.Char(36)
+model Compra {
+  id         String   @default(uuid()) @db.Char(40)
   usuario    Usuario  @relation(fields: [usuarioId], references: [id])
-  usuarioId  String   @db.Char(36)
+  usuarioId  String   @db.Char(40)
   produto    Produto  @relation(fields: [produtoId], references: [id])
-  produtoId  String   @default("") @db.Char(36)
-  quantidade Int      @default(0) @db.Int()
-  comprado   Boolean  @default(false)
+  produtoId  String   @db.Char(40)
+  quantidade Int      @db.Int
   createdAt  DateTime @default(now()) @map("created_at")
   updatedAt  DateTime @updatedAt @map("updated_at")
 
-  @@map("carrinhos_produtos")
+  @@id([usuarioId, id])
+  @@map("compras_produtos")
 }
 
 datasource db {
