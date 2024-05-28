@@ -4,6 +4,17 @@ import { CreateUsuarioDto } from "./usuario.types";
 import { TiposUsuarios } from "../tipoUsuario/tipoUsuario.constants";
 
 const index = async (req: Request, res: Response) => {
+   /*
+      #swagger.summary = 'Listagem de usuários.'
+      #swagger.parameters['tipo'] = {
+        in: 'query',
+        description: 'Tipo dos usuários desejados',
+        type: 'string'
+      }   
+      #swagger.responses[200] = {
+        schema: { $ref: '#/definitions/UsuariosSemSenhaArrayDto' }
+      }    
+  */
   const tipo = req.query.tipo as TiposUsuarios | undefined;
   try {
     const usuarios = await getUsuarios(tipo);
@@ -14,6 +25,16 @@ const index = async (req: Request, res: Response) => {
 };
 
 const create = async (req: Request, res: Response) => {
+  /*
+    #swagger.summary = 'Cria um novo usuário (cliente ou admin).'
+    #swagger.parameters['body'] = {
+      in: 'body',
+      schema: { $ref: '#/definitions/CreateUsuarioDto' }
+    } 
+    #swagger.responses[200] = {
+      schema: { $ref: '#/definitions/UsuarioSemSenhaDto' }
+    }   
+  */
   const usuario = req.body as CreateUsuarioDto;
   try {
     if (await buscaUsuarioPorEmail(usuario.email))
@@ -27,6 +48,13 @@ const create = async (req: Request, res: Response) => {
 };
 
 const read = async (req: Request, res: Response) => {
+  /*
+    #swagger.summary = 'Recupera dados de um usuário específico.'
+    #swagger.parameters['id'] = { description: 'ID do usuário desejado' }
+    #swagger.responses[200] = {
+      schema: { $ref: '#/definitions/UsuarioSemSenhaDto' }
+    }   
+  */
   const { id } = req.params;
   try {
     const usuario = await buscaUsuarioPorId(id);
@@ -38,6 +66,17 @@ const read = async (req: Request, res: Response) => {
 };
 
 const update = async (req: Request, res: Response) => {
+  /*
+    #swagger.summary = 'Altera os dados de um usuário específico.'
+    #swagger.parameters['id'] = { description: 'ID do usuário' }
+    #swagger.parameters['body'] = {
+      in: 'body',
+      schema: { $ref: '#/definitions/UpdateUsuarioDto' }
+    }   
+    #swagger.responses[200] = {
+      schema: { $ref: '#/definitions/UsuarioSemSenhaDto' }
+    }   
+  */
   const { id } = req.params;
   const usuario = req.body;
   try {
@@ -51,6 +90,10 @@ const update = async (req: Request, res: Response) => {
 };
 
 const remove = async (req: Request, res: Response) => {
+  /*
+      #swagger.summary = 'Apaga um usuário da base.'
+      #swagger.parameters['id'] = { description: 'ID do usuário' }  
+  */
   const { id } = req.params;
   try {
     if (!(await buscaUsuarioPorId(id)))

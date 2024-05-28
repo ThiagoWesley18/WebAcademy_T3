@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npx nodemon --watch src src/index.ts",
+    "swagger": "ts-node src/swagger.ts",
     "build": "npx tsc",
     "start:prod": "node build/index.js"
   },

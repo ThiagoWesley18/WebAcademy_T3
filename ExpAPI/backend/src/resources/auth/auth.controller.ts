@@ -5,6 +5,16 @@ import { SignUpDto } from "./auth.types";
 import { createUsuario, buscaUsuarioPorEmail} from "../usuario/usuario.service";
 
 const signup = async (req: Request, res: Response) => {
+   /*
+  #swagger.summary = "Registro de novos clientes."
+  #swagger.parameters['body'] = {
+    in: 'body',
+    schema: { $ref: '#/definitions/SignUpDto' }
+  }
+  #swagger.responses[201] = {
+    schema: { $ref: '#/definitions/UsuarioSemSenhaDto'}
+  }
+  */
   const usuario = req.body as SignUpDto;
   try {
     if (await buscaUsuarioPorEmail(usuario.email))
@@ -18,6 +28,16 @@ const signup = async (req: Request, res: Response) => {
 };
 
 const login = async (req: Request, res: Response) => {
+  /*
+  #swagger.summary = "Autentificação de usuários (clientes ou admins)."
+  #swagger.parameters['body'] = {
+    in: 'body',
+    schema: { $ref: '#/definitions/LoginDto' }
+  }
+  #swagger.responses[200] = {
+    schema: { $ref: '#/definitions/LoginResponseMsg'}
+  }
+  */
   const { email, senha } = req.body;
   try {
     const usuario = await checkAuth({ email, senha });
@@ -33,6 +53,12 @@ const login = async (req: Request, res: Response) => {
 };
 
 const logout = (req: Request, res: Response) => {
+   /*
+  #swagger.summary = "Logout de usuários."
+  #swagger.responses[200] = {
+    schema: { $ref: '#/definitions/LogoutResponseMsg'}
+  }  
+  */
   if (req.session.uid) {
     req.session.destroy((err) => {
       if (err) return res.status(500).json(err);

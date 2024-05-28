@@ -4,6 +4,12 @@ import { UpdateProdutoDto } from './produto.types';
 
 
 const index = async (req: Request, res: Response) => {
+    /*
+        #swagger.summary = 'Listagem de produtos.'
+        #swagger.responses[200] = {
+            schema: { $ref: '#/definitions/ProdutosArray' }
+        }    
+    */
     try {
         const produtos = await listprodutos();
         res.status(200).json(produtos);
@@ -12,6 +18,16 @@ const index = async (req: Request, res: Response) => {
     }       
 };
 const create = async (req: Request, res: Response) => {
+    /*
+        #swagger.summary = 'Adiciona um novo produto na base.'
+        #swagger.parameters['body'] = {
+            in: 'body',
+            schema: { $ref: '#/definitions/CreateProdutoDto' }
+        } 
+        #swagger.responses[200] = {
+            schema: { $ref: '#/definitions/Produto' }
+        }   
+    */
     const produto = req.body;
     try {
         if (await jaExiste(produto.nome)) {
@@ -26,6 +42,13 @@ const create = async (req: Request, res: Response) => {
     }
 };
 const read = async (req: Request, res: Response) => {
+    /*
+        #swagger.summary = 'Recupera dados de um produto específico.'
+        #swagger.parameters['id'] = { description: 'ID do produto desejado' }
+        #swagger.responses[200] = {
+            schema: { $ref: '#/definitions/Produto' }
+        }   
+    */
     const {id} = req.params;
     try {
         const produto = await readProduto(id);
@@ -38,6 +61,17 @@ const read = async (req: Request, res: Response) => {
     }
 };
 const update = async (req: Request, res: Response) => {
+    /*
+        #swagger.summary = 'Altera os dados de um produto específico.'
+        #swagger.parameters['id'] = { description: 'ID do produto' }
+        #swagger.parameters['body'] = {
+            in: 'body',
+            schema: { $ref: '#/definitions/UpdateProdutoDto' }
+        }   
+        #swagger.responses[200] = {
+            schema: { $ref: '#/definitions/Produto' }
+        }   
+    */
     const {id} = req.params;
     const produto = req.body as UpdateProdutoDto;
     try {
@@ -53,6 +87,10 @@ const update = async (req: Request, res: Response) => {
     }
 };
 const remove = async (req: Request, res: Response) => {
+    /*
+        #swagger.summary = 'Apaga um produto da base.'
+        #swagger.parameters['id'] = { description: 'ID do produto' }  
+    */
     const {id} = req.params;
     try {
         const produto = await deleteProduto(id);

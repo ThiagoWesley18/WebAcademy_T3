@@ -7,6 +7,8 @@ import setCookieLang from './middlewares/setLangCookie';
 import session from 'express-session';
 import { v4 as uuidv4 } from 'uuid';
 import { Carrinho } from './resources/compra/compra.types';
+import swaggerUi from "swagger-ui-express";
+import swaggerFile from "./swagger-output.json";
 
 declare module "express-session" {
   interface SessionData {
@@ -43,3 +45,4 @@ app.listen(PORT, () => {
 
 app.use(express.json());
 app.use('/', router);
+app.use("/api", swaggerUi.serve, swaggerUi.setup(swaggerFile));

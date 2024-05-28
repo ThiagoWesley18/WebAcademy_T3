@@ -2,6 +2,12 @@ import { Request, Response } from "express";
 import { compra } from "./compra.service";
 
 const index = async (req: Request, res: Response) => {
+    /*
+        #swagger.summary = 'Recupera lista de produtos do carrinho.'
+        #swagger.responses[200] = {
+            schema: { $ref: '#/definitions/ProdutosCarrinhoList' }
+        }    
+  */
     if (req.session.carrinhoProdutos) {
         res.status(200).json(req.session.carrinhoProdutos);
     }else{
@@ -10,6 +16,13 @@ const index = async (req: Request, res: Response) => {
 }
 
 const adicionarProduto = async (req: Request, res: Response) => {
+     /*
+        #swagger.summary = 'Adiciona produto no carrinho.'
+        #swagger.parameters['id'] = { description: 'ID do produto desejado' }
+        #swagger.responses[200] = {
+            schema: { $ref: '#/definitions/AddProdutoCarrinhoMsg' }
+        }    
+    */
     const id = req.params.id;
     const quantidade = parseInt(req.params.total);
   
@@ -22,6 +35,12 @@ const adicionarProduto = async (req: Request, res: Response) => {
 }
 
 const compraProduto = async (req: Request, res: Response) => {
+    /*
+        #swagger.summary = 'Finaliza a compra.'
+        #swagger.responses[200] = {
+            schema: { $ref: '#/definitions/FinalizaCompraMsg' }
+        }    
+    */
     const produtos = req.session.carrinhoProdutos;
     if (req.session.uid) {
         const uid: string = req.session.uid;
