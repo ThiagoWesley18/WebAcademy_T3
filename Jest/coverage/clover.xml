@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1718152604827" clover="3.2.0">
+  <project timestamp="1718152604827" name="All files">
+    <metrics statements="14" coveredstatements="14" conditionals="11" coveredconditionals="11" methods="3" coveredmethods="3" elements="28" coveredelements="28" complexity="0" loc="14" ncloc="14" packages="1" files="1" classes="1"/>
+    <file name="validations.js" path="D:\WebAcademy_T3\Jest\src\utils\validations.js">
+      <metrics statements="14" coveredstatements="14" conditionals="11" coveredconditionals="11" methods="3" coveredmethods="3"/>
+      <line num="8" count="4" type="stmt"/>
+      <line num="9" count="4" type="stmt"/>
+      <line num="11" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="12" count="3" type="stmt"/>
+      <line num="24" count="4" type="stmt"/>
+      <line num="31" count="4" type="stmt"/>
+      <line num="32" count="4" type="cond" truecount="5" falsecount="0"/>
+      <line num="33" count="1" type="stmt"/>
+      <line num="51" count="3" type="stmt"/>
+      <line num="52" count="3" type="stmt"/>
+      <line num="53" count="4" type="cond" truecount="4" falsecount="0"/>
+      <line num="54" count="3" type="stmt"/>
+      <line num="56" count="2" type="stmt"/>
+      <line num="59" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
