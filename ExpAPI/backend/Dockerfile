@@ -10,6 +10,10 @@ COPY . .
 
 RUN npx prisma generate
 
+RUN npm run migrate
+
+RUN  npm run seed
+
 EXPOSE 4466
 
 CMD ["npm", "start"]
